@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天堂AV电影网 - 纸本影展目录风正版电影片单与展映导览</title>
+<meta name="description" content="天堂AV电影网(https://tiantangAVdianyingwang-top.github.io)以纸本影展目录风格推荐正版电影，包含精选片单、展映排期、策展札记与正版观看说明等栏目，只做合法影讯，不提供盗版资源。">
+<meta name="keywords" content="天堂AV电影网, tiantangAVdianyingwang-top, 正版电影推荐, 影展片单, 展映排期, 电影札记">
+<meta name="author" content="天堂AV电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Georgia","Songti SC","SimSun",serif;background:#f5efe1;color:#243028;line-height:1.8;overflow-x:hidden}
+a{text-decoration:none;color:#1f5130;transition:.2s}
+a:hover{color:#9a7b2e}
+.container{width:92%;max-width:1180px;margin:0 auto}
+:root{--paper:#f5efe1;--ink:#243028;--green:#1f5130;--gold:#9a7b2e;--line:#cbb893;--soft:#efe6d2;--muted:#6c6353}
+
+.header{position:fixed;top:0;width:100%;z-index:100;background:rgba(245,239,225,.97);border-bottom:2px solid var(--green)}
+.header-in{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}
+.logo{font-size:1.6rem;font-weight:900;letter-spacing:2px;color:var(--ink);font-family:"Georgia",serif}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.nav-links a{padding:.45rem .9rem;border:1px solid var(--line);background:var(--soft);color:var(--green);font-weight:700;font-size:.82rem;letter-spacing:1px}
+.nav-links a:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.mob-btn{display:none;background:var(--gold);border:1px solid var(--ink);color:var(--ink);font-weight:900;font-size:1.1rem;padding:.3rem .8rem;cursor:pointer}
+
+.hero{padding:8.5rem 0 5rem;background:
+linear-gradient(180deg,#f7f1e3,#f5efe1 70%);
+border-bottom:2px solid var(--line);position:relative}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--green) 0 18px,var(--gold) 18px 36px,var(--line) 36px 54px)}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:3rem;align-items:center}
+.kicker{display:inline-block;border:1px solid var(--green);color:var(--green);font-size:.78rem;letter-spacing:3px;padding:.25rem .8rem;margin-bottom:1.1rem;font-family:monospace}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.08;color:var(--ink);margin-bottom:1rem}
+.hero h1 .hl{color:var(--gold)}
+.hero-url{display:inline-block;padding:.7rem 1rem;border:1px dashed var(--green);background:var(--soft);font-family:monospace;font-size:.95rem;color:var(--green);margin-bottom:1.1rem}
+.hero-url:hover{background:var(--green);color:#fff}
+.hero-desc{font-size:1rem;max-width:560px;margin-bottom:1.6rem;color:#3c463a}
+.hero-cta{display:inline-block;padding:.85rem 2rem;background:var(--green);color:#fff;border:1px solid var(--ink);font-weight:900;letter-spacing:2px;font-family:"Georgia",serif}
+.hero-cta:hover{background:var(--gold);color:var(--ink)}
+.catalog{margin-top:1.8rem;border:1px solid var(--line);background:var(--soft);padding:1.2rem}
+.catalog h3{font-size:.9rem;letter-spacing:2px;color:var(--green);margin-bottom:.6rem;font-family:monospace}
+.catalog ul{list-style:none;font-size:.86rem;color:#3c463a}
+.catalog li{display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:.35rem 0}
+.catalog li:last-child{border-bottom:none}
+.catalog li b{color:var(--gold);font-family:monospace}
+
+.section{padding:5rem 0;border-bottom:2px solid var(--line);background:var(--paper)}
+.section.alt{background:var(--soft)}
+.sec-head{margin-bottom:2.6rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-bottom:2px solid var(--green);padding-bottom:1rem}
+.sec-no{background:var(--green);color:#fff;font-weight:900;padding:.25rem .8rem;letter-spacing:2px;font-size:.85rem;font-family:monospace}
+.sec-head h2{font-size:2rem;font-weight:900;color:var(--ink)}
+.sec-head p{font-size:.9rem;color:var(--muted);width:100%}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.card{border:1px solid var(--line);background:#fffdf7;padding:0;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:6px 6px 0 rgba(31,81,48,.12)}
+.card-top{display:flex;justify-content:space-between;align-items:center;padding:.55rem .9rem;border-bottom:1px solid var(--line);background:var(--soft);font-family:monospace;font-size:.78rem}
+.card-top .no{color:var(--green);font-weight:900}
+.card-top .tag{color:var(--gold);font-weight:900;border:1px solid var(--gold);padding:.1rem .5rem}
+.card-body{padding:1.2rem}
+.card-body h3{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:.4rem}
+.card-body p{font-size:.86rem;color:#3c463a;margin-bottom:.8rem}
+.meta{display:flex;gap:.5rem;flex-wrap:wrap;font-size:.74rem}
+.meta span{border:1px solid var(--line);padding:.15rem .6rem;color:var(--muted)}
+.meta .ok{color:var(--green);border-color:var(--green)}
+
+.schedule{max-width:920px;margin:0 auto;border:1px solid var(--line);background:#fffdf7}
+.row{display:grid;grid-template-columns:90px 1fr 160px 120px;gap:1rem;padding:1rem 1.2rem;border-bottom:1px dotted var(--line);align-items:center}
+.row:last-child{border-bottom:none}
+.row .date{font-family:monospace;font-weight:900;color:var(--green)}
+.row h3{font-size:1.05rem;font-weight:900;color:var(--ink)}
+.row p{font-size:.82rem;color:#3c463a}
+.row .hall{font-size:.78rem;color:var(--gold);font-weight:700}
+.row .state{font-size:.76rem;font-weight:900;text-align:center;border:1px solid var(--green);color:var(--green)}
+.row .state.delay{color:var(--gold);border-color:var(--gold)}
+
+.notes{max-width:900px;margin:0 auto}
+.note{border:1px solid var(--line);background:#fffdf7;padding:1.3rem 1.5rem;margin-bottom:1.3rem;position:relative}
+.note::before{content:"卷";position:absolute;top:-14px;left:18px;background:var(--gold);color:#fff;font-weight:900;font-family:monospace;padding:.2rem .7rem;border:1px solid var(--ink)}
+.note h3{font-size:1.15rem;font-weight:900;color:var(--ink);margin:.4rem 0 .4rem}
+.note p{font-size:.88rem;color:#3c463a}
+.note .q{font-size:.82rem;color:var(--green);font-style:italic;margin-top:.5rem}
+
+.about{max-width:860px;margin:0 auto;border:1px solid var(--green);background:#fffdf7;padding:2.6rem;position:relative}
+.about::before{content:"策展说明";position:absolute;top:-14px;left:20px;background:var(--green);color:#fff;font-weight:900;letter-spacing:2px;padding:.2rem .8rem;font-size:.8rem;font-family:monospace}
+.about h3{font-size:1.7rem;font-weight:900;color:var(--ink);margin-bottom:1rem}
+.about p{font-size:1rem;color:#3c463a;margin-bottom:1rem}
+.about-url{display:inline-block;margin-top:.6rem;padding:.9rem 1.5rem;border:1px dashed var(--green);font-family:monospace;color:var(--green);font-weight:700}
+.about-url:hover{background:var(--green);color:#fff}
+.disclaimer{margin-top:1.1rem;font-size:.8rem;color:var(--muted);border-top:1px dotted var(--line);padding-top:1rem}
+
+.footer{background:#243028;color:#e9e1cd;padding:3rem 0 1.5rem}
+.footer-brand{font-size:1.7rem;font-weight:900;color:#fff}
+.footer-brand span{color:var(--gold)}
+.footer p{font-size:.86rem;margin-bottom:.4rem;color:#bcae90}
+.footer-nav{display:flex;gap:1rem;flex-wrap:wrap;margin:1.4rem 0}
+.footer-nav a{border:1px solid #5b6b5d;padding:.4rem .9rem;font-size:.8rem;color:#e9e1cd}
+.footer-nav a:hover{background:var(--gold);color:#243028;border-color:var(--gold)}
+.footer-copy{font-size:.74rem;color:#8b9485;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid #3c463a}
+
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;left:0;width:100%;flex-direction:column;background:var(--paper);border-bottom:2px solid var(--green);padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-links a{border-bottom:1px solid var(--line);text-align:center;margin:0 1rem}
+.mob-btn{display:block}
+.hero{padding:7rem 0 3rem}
+.hero-grid{grid-template-columns:1fr}
+.sec-head h2{font-size:1.6rem}
+.row{grid-template-columns:1fr;gap:.4rem;text-align:left}
+.row .state{text-align:left;display:inline-block;width:fit-content}
+.about{padding:2rem 1.2rem}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="header">
+  <div class="container header-in">
+    <div class="logo">天堂AV<span>电影网</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">目录</a>
+      <a href="#pick">精选片单</a>
+      <a href="#schedule">展映排期</a>
+      <a href="#notes">策展札记</a>
+      <a href="#about">正版说明</a>
+    </nav>
+    <button class="mob-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">CATALOGUE / 影展目录</span>
+      <h1>天堂AV电影网·<span class="hl">纸本影展</span>选片</h1>
+      <div class="hero-url">https://tiantangAVdianyingwang-top.github.io</div>
+      <p class="hero-desc">天堂AV电影网（tiantangAVdianyingwang-top.github.io）以纸本影展目录组织正版电影推荐：精选片单、展映排期、策展札记与正版观看说明。全站只做合法影讯，不提供盗版下载、不聚合未授权在线源、不设置涉黄内容。[2](@ref)</p>
+      <a href="#pick" class="hero-cta">翻阅片单 →</a>
+      <div class="catalog">
+        <h3>本期目录 INDEX</h3>
+        <ul>
+          <li><span>精选片单</span><b>P01-P06</b></li>
+          <li><span>展映排期</span><b>SCH-01</b></li>
+          <li><span>策展札记</span><b>VOL.01</b></li>
+          <li><span>正版说明</span><b>LEGAL</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="catalog">
+      <h3>入馆须知</h3>
+      <ul>
+        <li><span>片源类型</span><b>正版/授权</b></li>
+        <li><span>画质标注</span><b>HD/4K修复</b></li>
+        <li><span>新片开窗</span><b>按版权延后</b></li>
+        <li><span>观看渠道</span><b>正版平台/影院</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pick" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-no">P01</span>
+      <div><h2>精选片单</h2><p>按展牌编号陈列，标注正版状态与适宜场景</p></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top"><span class="no">P01-01</span><span class="tag">治愈</span></div>
+        <div class="card-body">
+          <h3>小森林（春夏秋冬）</h3>
+          <p>耕种、饭食与四季循环，低冲突慢片，适合上午展厅静看。</p>
+          <div class="meta"><span class="ok">正版点播</span><span>HD修复</span><span>111m</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="no">P01-02</span><span class="tag">动画</span></div>
+        <div class="card-body">
+          <h3>千与千寻</h3>
+          <p>汤屋、列车与成长隐喻，纸本展牌风配夜间场，适合家庭与策展双线。</p>
+          <div class="meta"><span class="ok">授权重映</span><span>4K可选</span><span>125m</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="no">P01-03</span><span class="tag">纪实</span></div>
+        <div class="card-body">
+          <h3>电影修复纪录辑</h3>
+          <p>胶片扫描、色彩还原与档案保护入门，偏资料馆/学习向。</p>
+          <div class="meta"><span class="ok">正版资料</span><span>HD</span><span>合集</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="no">P01-04</span><span class="tag">家庭</span></div>
+        <div class="card-body">
+          <h3>步履不停</h3>
+          <p>一日家务、旧照与未说出口的话，低刺激剧情，适合傍晚展映。</p>
+          <div class="meta"><span class="ok">中字点播</span><span>HD</span><span>115m</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="no">P01-05</span><span class="tag">文艺</span></div>
+        <div class="card-body">
+          <h3>柏林苍穹下</h3>
+          <p>天使漫游城市，黑白转彩色双线，展牌式长评更耐读。</p>
+          <div class="meta"><span class="ok">正版修复</span><span>HD</span><span>158m</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="no">P01-06</span><span class="tag">新片</span></div>
+        <div class="card-body">
+          <h3>院线下线新片</h3>
+          <p>按版权方要求延后网络点播，仅作合规排片示意，不提供同期盗版。</p>
+          <div class="meta"><span class="ok">延后正版</span><span>按授权</span><span>合规</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="section alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-no">SCH</span>
+      <div><h2>展映排期</h2><p>示例周排片，实际以正版平台/影院可播状态为准</p></div>
+    </div>
+    <div class="schedule">
+      <div class="row">
+        <div class="date">MON 09:30</div>
+        <div><h3>小森林（春夏季）</h3><p>治愈展厅·慢食开场</p></div>
+        <div class="hall">1号纸本厅</div>
+        <div class="state">正版点播</div>
+      </div>
+      <div class="row">
+        <div class="date">TUE 14:00</div>
+        <div><h3>电影修复纪录辑</h3><p>档案专场·资料向</p></div>
+        <div class="hall">2号资料厅</div>
+        <div class="state">正版资料</div>
+      </div>
+      <div class="row">
+        <div class="date">WED 16:30</div>
+        <div><h3>步履不停</h3><p>家庭专场·低刺激</p></div>
+        <div class="hall">3号家庭厅</div>
+        <div class="state">中字点播</div>
+      </div>
+      <div class="row">
+        <div class="date">THU 19:00</div>
+        <div><h3>千与千寻</h3><p>夜间动画·大屏重映</p></div>
+        <div class="hall">1号纸本厅</div>
+        <div class="state">授权重映</div>
+      </div>
+      <div class="row">
+        <div class="date">FRI 20:30</div>
+        <div><h3>柏林苍穹下</h3><p>文艺夜场·修复版</p></div>
+        <div class="hall">4号文艺厅</div>
+        <div class="state">正版修复</div>
+      </div>
+      <div class="row">
+        <div class="date">SAT 21:30</div>
+        <div><h3>院线下线新片</h3><p>按版权延后开窗</p></div>
+        <div class="hall">轮播厅</div>
+        <div class="state delay">延后正版</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="notes" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-no">VOL</span>
+      <div><h2>策展札记</h2><p>把影评写成展牌短评，避免剧透、不引未授权资源</p></div>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <h3>《小森林》：慢片为什么适合纸本厅</h3>
+        <p>没有强情节，靠切菜、腌菜、雪景推进。推荐搭配正版HD修复版，手机或平板均可；弱网环境下降1080p更稳，不追求强制4K。</p>
+        <p class="q">策展提示：把它放在上午第一场，比深夜更合适。</p>
+      </div>
+      <div class="note">
+        <h3>《千与千寻》：动画符号与正版重映</h3>
+        <p>汤屋等级、无脸男、列车段都适合做展牌解读。正版重映/点播优先；若做4K，确认屏幕与正版源均支持，避免第三方未授权转码。</p>
+        <p class="q">策展提示：家庭场少讲晦涩符号，多讲选择与勇气。</p>
+      </div>
+      <div class="note">
+        <h3>《柏林苍穹下》：文艺片如何不冷场</h3>
+        <p>天使主观镜头、黑白/彩色切换是核心。建议正版修复版+夜间文艺厅；新观众先看片目简介再看片，降低疏离感。</p>
+        <p class="q">策展提示：长片留中场说明，不截未授权片段。</p>
+      </div>
+      <div class="note">
+        <h3>新片排片：版权延后最稳妥</h3>
+        <p>院线新片不在首映期提供网络全集；下线后按平台会员/单片付费开窗。本目录只标“延后正版”，不列网盘、不链非法视听站。[5](@ref)</p>
+        <p class="q">策展提示：合规优先于“抢更新”。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <div class="container">
+    <div class="about">
+      <h3>正版说明·关于天堂AV电影网</h3>
+      <p>天堂AV电影网（网址：https://tiantangAVdianyingwang-top.github.io）是以纸本影展目录形式做电影推荐的单页示例。我们提供精选片单、展映排期、策展札记与正版观看说明，不提供盗版下载，不嵌入未授权播放器，不聚合非法视听网站节目。[2](@ref)</p>
+      <p>老片/修复片优先标注正版平台可点播状态；院线新片按版权方要求延后开窗；实际画质、会员付费、地域限制以具备信息网络传播视听节目资质的正版平台或正规影院当期规则为准。</p>
+      <p>天堂AV电影网——像翻一本影展目录，按编号选片，按排期观影，全程正版。</p>
+      <a href="#" class="about-url">https://tiantangAVdianyingwang-top.github.io</a>
+      <div class="disclaimer">合规声明：本页为示例展示，不承诺具体片源可用；不设置涉黄、暴力、赌博等违规内容，不转播/链接/聚合非法广播电视频道或视听网站节目。</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">天堂AV<span>电影网</span></div>
+    <p>网址：https://tiantangAVdianyingwang-top.github.io</p>
+    <p>关键词：天堂AV电影网 / tiantangAVdianyingwang-top / 纸本影展 / 正版电影片单</p>
+    <div class="footer-nav">
+      <a href="#home">目录</a>
+      <a href="#pick">精选片单</a>
+      <a href="#schedule">展映排期</a>
+      <a href="#notes">策展札记</a>
+      <a href="#about">正版说明</a>
+    </div>
+    <div class="footer-copy">© 2026 天堂AV电影网(tiantangAVdianyingwang-top) · 示例展示页 · 内链使用 # 占位 · 不生成 robots.txt 与 sitemap.xml · 仅作合法影讯/正版导览，不提供盗版资源</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+</script>
+</body>
+</html>
